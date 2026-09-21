@@ -115,17 +115,24 @@ img { max-width: 100%; display: block; }
   padding: 80px 24px;
 }
 .hero-claim-inner { max-width: 1280px; }
-.hero-claim h1, .peeps-hero h1 {
+
+/* Figma hero typography:
+   WE / HAPPEN. = Inter Black Italic
+   MAKE / THINGS = Inter Light */
+.hero-claim h1 {
   margin: 0;
-  font-weight: 900;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 300;
   font-size: clamp(54px, 8.2vw, 128px);
   line-height: .95;
   letter-spacing: .07em;
   text-shadow: 0 0 80px rgba(0,0,0,.78);
   text-transform: uppercase;
 }
-.hero-claim h1 span,
-.peeps-hero h1 span { font-style: italic; }
+.hero-claim h1 span {
+  font-weight: 900;
+  font-style: italic;
+}
 .hero-button {
   display: inline-flex;
   margin-top: 44px;
@@ -362,6 +369,16 @@ img { max-width: 100%; display: block; }
   opacity: .76;
 }
 .peeps-hero > div { position: relative; z-index: 1; }
+.peeps-hero h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(54px, 8.2vw, 128px);
+  line-height: .95;
+  letter-spacing: .07em;
+  text-shadow: 0 0 80px rgba(0,0,0,.78);
+  text-transform: uppercase;
+}
+.peeps-hero h1 span { font-style: italic; }
 
 .about-values {
   background: linear-gradient(93deg, #4c1515 4.2%, #790202 107.26%);
@@ -694,6 +711,5 @@ img { max-width: 100%; display: block; }
 @media (max-width: 560px) {
   .hero-button, .cta-button { min-width: 0; width: 100%; max-width: 365px; }
   .section-title { letter-spacing: .16em; }
-  .hero-claim h1, .peeps-hero h1 { letter-spacing: .045em; }
-  .contact-form label > span { font-size: 18px; }
+  .hero-claim h1 { letter-spacing: .045em; }
 }
