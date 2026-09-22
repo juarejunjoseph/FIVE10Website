@@ -264,19 +264,35 @@ img { max-width: 100%; display: block; }
 }
 
 .clients-section {
-  padding: 78px 24px 120px;
+  padding: 78px 0 120px;
   background: #e6e6e6;
 }
-.clients-track {
-  width: min(1769px, 100%);
-  margin: 38px auto 0;
-  overflow: hidden;
-  border-radius: 12px;
+
+/* Figma: the client logos sit in a horizontal scroll area.
+   The logo artwork stays at its design width while the viewport
+   becomes horizontally scrollable on narrower screens. */
+.clients-section .section-title {
+  padding: 0 24px;
 }
-.clients-track img {
+.clients-track {
   width: 100%;
+  margin: 38px auto 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  touch-action: pan-x;
+}
+.clients-track:active { cursor: grabbing; }
+.clients-track::-webkit-scrollbar { display: none; }
+.clients-track img {
+  width: 1769px;
+  max-width: none;
   height: auto;
   object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .cta-section {
