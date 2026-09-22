@@ -268,31 +268,40 @@ img { max-width: 100%; display: block; }
   background: #e6e6e6;
 }
 
-/* Figma: the client logos sit in a horizontal scroll area.
-   The logo artwork stays at its design width while the viewport
-   becomes horizontally scrollable on narrower screens. */
 .clients-section .section-title {
   padding: 0 24px;
 }
-.clients-track {
+
+.logo-parallax {
   width: 100%;
   margin: 38px auto 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  overscroll-behavior-x: contain;
-  cursor: grab;
-  touch-action: pan-x;
+  overflow: hidden;
+  position: relative;
 }
-.clients-track:active { cursor: grabbing; }
-.clients-track::-webkit-scrollbar { display: none; }
-.clients-track img {
+
+.logo-parallax-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.logo-parallax-track img {
   width: 1769px;
   max-width: none;
   height: auto;
-  object-fit: contain;
-  flex: 0 0 auto;
+  flex: 0 0 1769px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* The repeated artwork creates a seamless loop while page scroll
+   drives the horizontal movement, giving the section a parallax feel. */
+@media (prefers-reduced-motion: reduce) {
+  .logo-parallax-track {
+    transform: none !important;
+  }
 }
 
 .cta-section {
