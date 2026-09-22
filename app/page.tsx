@@ -2,6 +2,7 @@ import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import Footer from "../components/Footer";
 import ProjectCarousel from "../components/ProjectCarousel";
+import LogoParallax from "../components/LogoParallax";
 
 const A="https://www.figma.com/api/mcp/asset/34c35516-e914-4962-a811-000cd1cbd0b6";
 
@@ -24,8 +25,8 @@ export default function Home(){
       <ProjectCarousel slides={slides}/>
     </section>
     <section className="clients-section">
-      <h2 className="section-title">Who We Have Worked With</h2>
-      <div className="clients-track"><img src={`${A}/1b863.png`} alt="FIVE10 clients"/></div>
+      <h2 className="section-title">Who We Have <em>Worked With</em></h2>
+      <LogoParallax image={`${A}/1b863.png`} />
     </section>
     <section className="cta-section">
       <h2>LET’S MAKE THINGS <em>HAPPEN!</em></h2>
